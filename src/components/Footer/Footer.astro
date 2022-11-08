@@ -1,0 +1,90 @@
+---
+import logo from "@img/seidel-group-logo.svg";
+import { Icon } from "astro-icon";
+
+const quickLinks = [
+  { linkText: "Home", link: "/" },
+  { linkText: "About Us", link: "/about" },
+  { linkText: "Sustainability", link: "/sustainability" },
+  { linkText: "Industries", link: "/industries" },
+  { linkText: "Contact Us", link: "/contact" },
+];
+const socialLinks = [
+  { name: "ant-design:instagram-outlined", link: "/" },
+  { name: "ant-design:twitter-outlined", link: "/" },
+  { name: "ant-design:facebook-outlined", link: "/" },
+];
+
+const contacts = [
+  { name: "ci:location", text: `2223 Thomaston Ave \nWaterbury, CT 06704` },
+  { name: "carbon:phone-filled", text: "203-757-7349" },
+  { name: "ic:sharp-email", text: "info@seidelinc.com" },
+];
+---
+
+<section>
+  <footer
+    class="max-w-7xl mx-auto my-20 flex justify-between flex-col lg:flex-row items-center lg:items-start space-y-4 lg:space-y-0"
+  >
+    <div class="max-w-sm">
+      <div>
+        <img src={logo} alt="seidel group logo" />
+        <p>
+          This is just placeholder text. Don’t be alarmed, this is just here to
+          fill up space since your finalized copy isn’t ready yet.
+        </p>
+        <div class="flex space-x-2 mt-3">
+          {
+            socialLinks.map((link) => (
+              <a href={link.link}>
+                <Icon name={link.name} size={30} class="text-primary" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="flex space-x-20">
+      <div>
+        <p class="font-bold text-xl">Quick Links</p>
+        <ul class="space-y-2 mt-2">
+          {
+            quickLinks.map((link) => (
+              <li>
+                <a href={link.link}>{link.linkText}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <p class="text-xl font-bold">Contact Us</p>
+        <ul class="space-y-3 mt-2">
+          {
+            contacts.map((contact) => (
+              <div class="flex items-start space-x-2 max-w-xs">
+                <Icon name={contact.name} size={30} class="text-primary" />
+                <p class="whitespace-pre-line">{contact.text}</p>
+              </div>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class="bg-black py-5 px-[2.5%] 2xlg:px-0 text-white text-center">
+    <div
+      class="max-w-8xl mx-auto flex justify-between flex-col lg:flex-row items-center space-y-2 lg:space-y-0"
+    >
+      <p class="text-sm">
+        © 2022 Seidel Group | All Rights Reserved | Powered by <a
+          href="https://simply-sprout.com">Simply Sprout</a
+        >
+      </p>
+      <div class="flex space-x-5 text-sm">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</section>
