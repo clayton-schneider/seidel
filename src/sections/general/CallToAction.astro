@@ -1,0 +1,27 @@
+---
+import { Image } from "@astrojs/image/components";
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import img from "@img/home/request-a-quote.jpg";
+---
+
+<section class="relative overflow-hidden">
+  <Image
+    src={img}
+    alt="request a quote"
+    class="absolute h-full w-full object-cover"
+  />
+  <div
+    class="px-[2.5%] 2xl:px-0 2xl:max-w-8xl text-center lg:text-left mx-auto py-32 relative z-10"
+  >
+    <div class="bg-white py-10 px-12 max-w-lg">
+      <h2 class="font-bold text-4xl">This is just a placeholder headline</h2>
+      <p class="mt-2">
+        This is just placeholder text. Don't be alarmed, this is just here to
+        fill up space since your finalized copy isn't ready
+      </p>
+      <PrimaryBtn to="/request-a-quote" className="mt-5"
+        >Request A Quote</PrimaryBtn
+      >
+    </div>
+  </div>
+</section>
