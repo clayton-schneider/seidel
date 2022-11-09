@@ -1,0 +1,67 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+const fields = [
+  { fieldType: "text", id: "first", name: "First Name" },
+  { fieldType: "text", id: "last", name: "Last Name" },
+  { fieldType: "email", id: "email", name: "Email Address" },
+  { fieldType: "tel", id: "phone", name: "Phone Number" },
+  { fieldType: "text", id: "company", name: "Company Name" },
+  { fieldType: "text", id: "address", name: "Address" },
+  { fieldType: "textarea", id: "message", name: "Message" },
+];
+---
+
+<Layout title="Request A Quote | Seidel Group">
+  <main>
+    <section class="px-[2.5%]">
+      <div class="max-w-[800px] mx-auto">
+        <div class="text-center">
+          <h1 class="font-black text-4xl lg:text-6xl">Request A Quote</h1>
+          <p class="text-lg mt-4 max-w-2xl mx-auto">
+            Your next project is right around the corner! Fill out this form so
+            we can assist you as best possible.
+          </p>
+        </div>
+        <form class="my-5 grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {
+            fields.map((field) => (
+              <div
+                class={
+                  (field.fieldType === "textarea"
+                    ? "col-span-2"
+                    : "col-span-2 lg:col-span-1") + " relative"
+                }
+              >
+                <label for={field.id} class="invisible absolute">
+                  {field.name}
+                </label>
+                {field.fieldType === "textarea" ? (
+                  <textarea
+                    id={field.name}
+                    class="w-full bg-transparent focus:outline-none resize-none border-b-gray-800 border-b p-2 h-[150px]"
+                    placeholder={field.name}
+                  />
+                ) : (
+                  <input
+                    type={
+                      field.fieldType as astroHTML.JSX.HTMLInputTypeAttribute
+                    }
+                    name={field.name}
+                    id={field.id}
+                    class="w-full bg-transparent focus:outline-none border-b-gray-800 border-b p-2"
+                    placeholder={field.name}
+                  />
+                )}
+              </div>
+            ))
+          }
+
+          <PrimaryBtn type="submit" className="col-span-2 text-center"
+            >Submit</PrimaryBtn
+          >
+        </form>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -59,7 +59,7 @@ const NavMenu = ({ links }: Props) => {
           }
         })}
         <PrimaryBtn
-          to="/request-for-quote"
+          to="/request-a-quote"
           className="!block w-full text-center lg:text-left lg:w-auto"
         >
           Request A Quote
