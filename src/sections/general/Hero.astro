@@ -1,0 +1,31 @@
+---
+import { Image } from "@astrojs/image/components";
+interface Props {
+  header: string;
+  paragraph: string;
+  image: Promise<typeof import("*.png")>;
+}
+const { header, paragraph, image } = Astro.props;
+---
+
+<section class="px-[2.5%] my-10">
+  <div
+    class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between space-y-5 lg:space-y-0"
+  >
+    <div class="grow shrink-0 max-w-xl lg:mt-20 text-center lg:text-left">
+      <h1 class="font-black text-6xl">{header}</h1>
+      <p class="mt-4 text-lg">
+        {paragraph}
+      </p>
+    </div>
+    <div class="">
+      <Image
+        src={image}
+        alt="seidel aluminum anodizing"
+        width={900}
+        height={600}
+        fit="cover"
+      />
+    </div>
+  </div>
+</section>
