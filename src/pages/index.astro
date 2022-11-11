@@ -2,12 +2,55 @@
 import Layout from "../layouts/Layout.astro";
 import CallToAction from "src/sections/general/CallToAction.astro";
 import Hero from "src/sections/home/Hero.astro";
+import Selector from "@components/Selector/Selector";
+
+import { getImage } from "@astrojs/image";
+
+import cosmeticPre from "@img/general/cosmetic-packaging.jpg";
+const cosmeticImg = await getImage({ src: cosmeticPre });
+const industriesData = [
+  {
+    name: "Cosmetic",
+    title:
+      "This is just placeholder headline, we will replace it once your website copy is finished",
+    p: "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet. Once we have your content finalized, we'll replace this placeholder text with real content",
+    products: ["Makeup", "Skincare", "Fragrance", "Personal Care"],
+    img: cosmeticImg.src!,
+  },
+  {
+    name: "Automotive",
+    title:
+      "This is the automotive headline, we will replace it once your website copy is finished",
+    p: "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet. Once we have your content finalized, we'll replace this placeholder text with real content",
+    products: ["Batteries", "Interior Pieces"],
+    img: cosmeticImg.src!,
+  },
+  {
+    name: "Pharmaceutical",
+    title:
+      "This is the pharmaceutical headline, we will replace it once your website copy is finished",
+    p: "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet. Once we have your content finalized, we'll replace this placeholder text with real content",
+    products: ["Bottles", "Droppers", "Packaging"],
+    img: cosmeticImg.src!,
+  },
+];
 ---
 
 <Layout title="Seidel Group | Aluminum Anodizing">
   <main>
     <Hero />
-    <section class="bg-red-50 h-screen"></section>
+    <section class="px-[2.5%] bg-white py-20">
+      <div class="max-w-8xl mx-auto">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-bold text-4xl">Indutries Served</h2>
+          <p class="mt-3 text-lg">
+            This is just a placeholder text. Don't be alarmed, this is just here
+            to fill up space since your finalized copy, isn't ready.
+          </p>
+        </div>
+        <Selector className="mt-16" data={industriesData} client:load />
+      </div>
+    </section>
     <CallToAction />
   </main>
 </Layout>

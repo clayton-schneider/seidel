@@ -8,6 +8,7 @@ interface Props {
 }
 const PrimaryBtn = ({ children, to, className, type = "button" }: Props) => (
   <a
+    type={type}
     href={to}
     className={
       className +
