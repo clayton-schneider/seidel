@@ -1,8 +1,55 @@
 ---
 import Layout from "src/layouts/Layout.astro";
 import CallToAction from "src/sections/general/CallToAction.astro";
+import { Image } from "@astrojs/image/components";
 ---
 
 <Layout title="About Us | Seidel Group">
+  <section class="px-[2.5%] my-10">
+    <div
+      class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
+    >
+      <div class="grow shrink-0 max-w-lg lg:mt-20 text-center lg:text-left">
+        <h1 class="font-black text-6xl">About Us</h1>
+        <p class="mt-2 text-2xl">World leader in anodized aluminum finishes</p>
+        <p class="mt-4 text-lg">
+          This is just placeholder test. Don't be alarmed, this is just here to
+          fill up space since your finalized copy.
+        </p>
+      </div>
+      <div>
+        <Image
+          src={import("@img/about/facility.jpg")}
+          alt="seidel aluminum anodizing"
+          quality={100}
+        />
+      </div>
+    </div>
+  </section>
+  <section class="bg-white py-20 px-[2.5%]">
+    <div
+      class="max-w-8xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
+    >
+      <div class="grow shrink-0 max-w-3xl xl:mt-20 text-center lg:text-left">
+        <h1 class="font-black text-6xl">Our History</h1>
+        <p class="mt-2 font-bold text-lg">50+ years of history</p>
+        <p class="mt-4 text-lg leading-loose">
+          This is just placeholder text. Don’t be alarmed, this is just here to
+          fill up space since your finalized copy isn’t ready yet. Once we have
+          your content finalized, we’ll replace this placeholder text with your
+          real content. <br /><br />Sometimes it’s nice to put in text just to
+          get an idea of how text will fill in a space on your website. This is
+          just placeholder test. Don't be alarmed, this is just here to fill up
+          space since your finalized copy.
+        </p>
+      </div>
+      <div>
+        <Image
+          src={import("@img/about/history.jpg")}
+          alt="seidel aluminum anodizing"
+        />
+      </div>
+    </div>
+  </section>
   <CallToAction />
 </Layout>
