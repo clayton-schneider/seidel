@@ -1,7 +1,17 @@
 ---
 import Layout from "src/layouts/Layout.astro";
 import CallToAction from "src/sections/general/CallToAction.astro";
+import { getImage } from "@astrojs/image";
 import { Image } from "@astrojs/image/components";
+import WideSlide from "@components/Gallery/WideSlide";
+
+import empImg from "@img/about/employee-rack-anodizing.jpg";
+const { src } = await getImage({ src: empImg });
+const gallery = [
+  { src: src!, alt: "img alt" },
+  { src: src!, alt: "img alt" },
+  { src: src!, alt: "img alt" },
+];
 ---
 
 <Layout title="About Us | Seidel Group">
@@ -31,7 +41,7 @@ import { Image } from "@astrojs/image/components";
       class="max-w-8xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
     >
       <div class="grow shrink-0 max-w-3xl xl:mt-20 text-center lg:text-left">
-        <h1 class="font-black text-6xl">Our History</h1>
+        <h2 class="font-black text-4xl">Our History</h2>
         <p class="mt-2 font-bold text-lg">50+ years of history</p>
         <p class="mt-4 text-lg leading-loose">
           This is just placeholder text. Don’t be alarmed, this is just here to
@@ -50,6 +60,17 @@ import { Image } from "@astrojs/image/components";
         />
       </div>
     </div>
+  </section>
+  <section class="my-10 lg:my-20">
+    <h2 class="text-center font-bold text-4xl">
+      Real people, right in the USA
+    </h2>
+    <WideSlide
+      className="mt-10 lg:mt-20"
+      label="Seidel Group USA"
+      images={gallery}
+      client:visible
+    />
   </section>
   <CallToAction />
 </Layout>
