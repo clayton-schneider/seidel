@@ -4,6 +4,7 @@ import CallToAction from "src/sections/general/CallToAction.astro";
 import Industries from "src/sections/general/Industries.astro";
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
 const features = [
   {
     icon: "high-volume",
@@ -46,7 +47,7 @@ const features = [
       </div>
     </div>
   </section>
-  <section class="bg-white pt-20 pb-10 px-[2.5%]">
+  <section class="bg-white py-20 px-[2.5%]">
     <div class="max-w-8xl mx-auto">
       <h2 class="font-bold text-4xl text-center">This is just a placeholder</h2>
       <div class="mt-14 flex justify-between">
@@ -62,7 +63,7 @@ const features = [
       </div>
     </div>
   </section>
-  <section class="bg-white py-10 px-[2.5%]">
+  <section class="bg-white py-20 px-[2.5%]">
     <div class="max-w-8xl mx-auto">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="font-bold text-4xl">We fullfill every step of the way</h2>
@@ -78,7 +79,7 @@ const features = [
       />
     </div>
   </section>
-  <section class="bg-white py-10 px-[2.5%]">
+  <section class="bg-white py-20 px-[2.5%]">
     <div
       class="max-w-8xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
     >
@@ -100,6 +101,29 @@ const features = [
         <Image
           src={import("@img/capabilities/custom-colors.png")}
           alt="seidel aluminum anodizing"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="bg-white px-[2.5%] py-20">
+    <div
+      class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
+    >
+      <div class="grow shrink-0 max-w-xl lg:mt-20 text-center lg:text-left">
+        <h2 class="font-bold text-4xl">
+          You want beautiful metal, we can make it happen
+        </h2>
+        <p class="mt-2 text-2xl">Specifications</p>
+        <p class="mt-4 text-lg">
+          This is just placeholder test. Don't be alarmed, this is just here to
+          fill up space since your finalized copy.
+        </p>
+        <PrimaryBtn className="mt-4" to="#">Learn More</PrimaryBtn>
+      </div>
+      <div>
+        <Image
+          src={import("@img/capabilities/specifications.png")}
+          alt="specifications"
         />
       </div>
     </div>
