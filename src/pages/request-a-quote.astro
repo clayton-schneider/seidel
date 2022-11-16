@@ -23,7 +23,10 @@ const fields = [
             we can assist you as best possible.
           </p>
         </div>
-        <form class="my-5 grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <form
+          data-static-form-name="request-a-quote"
+          class="my-5 grid grid-cols-1 lg:grid-cols-2 gap-4"
+        >
           {
             fields.map((field) => (
               <div
