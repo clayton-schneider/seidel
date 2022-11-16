@@ -2,9 +2,66 @@
 import Layout from "src/layouts/Layout.astro";
 import CallToAction from "src/sections/general/CallToAction.astro";
 import Industries from "src/sections/general/Industries.astro";
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+const features = [
+  {
+    icon: "high-volume",
+    title: "High Volume",
+    body: "Our 75,000 sq.ft. facility allows us to process as much as you need.",
+  },
+  {
+    icon: "no-hazardous-waste",
+    title: "No Hazardous Waste",
+    body: "Seidel is the only anodizer in the market not to produce hazardous waste.",
+  },
+  {
+    icon: "vertically-integrated",
+    title: "Vertically Integrated",
+    body: "From start to finish, Seidel can process all of your needs.",
+  },
+];
 ---
 
 <Layout title="Capabilities | Seidel Group">
+  <section class="px-[2.5%] my-10">
+    <div
+      class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
+    >
+      <div class="grow shrink-0 max-w-lg lg:mt-20 text-center lg:text-left">
+        <h1 class="font-black text-5xl">
+          Fully integrated, here to serve every step of the way
+        </h1>
+        <p class="mt-4 text-lg">
+          This is just placeholder test. Don't be alarmed, this is just here to
+          fill up space since your finalized copy.
+        </p>
+      </div>
+      <div>
+        <Image
+          src={import("@img/capabilities/hero.png")}
+          alt="seidel aluminum anodizing"
+          quality={100}
+        />
+      </div>
+    </div>
+  </section>
+  <section class="bg-white py-20 px-[2.5%]">
+    <div class="max-w-8xl mx-auto">
+      <h2 class="font-bold text-4xl text-center">This is just a placeholder</h2>
+      <div class="mt-14 flex justify-between">
+        {
+          features.map((feature) => (
+            <div class="max-w-xs text-center">
+              <Icon name={feature.icon} size={75} class="mx-auto" />
+              <h4 class="mt-3 font-bold text-3xl">{feature.title}</h4>
+              <p class="mt-3">{feature.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
   <Industries />
   <CallToAction />
 </Layout>
