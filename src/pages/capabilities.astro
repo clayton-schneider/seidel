@@ -94,9 +94,14 @@ const gallery = [
         </p>
       </div>
       <Image
-        class="mt-3"
+        class="mt-3 hidden md:block"
         src={import("@img/capabilities/capabilities.png")}
         alt="capabilites"
+      />
+      <Image
+        class="mx-auto mt-3 md:hidden"
+        src={import("@img/capabilities/capabilities-vertical.png")}
+        alt="capabilities"
       />
     </div>
   </section>

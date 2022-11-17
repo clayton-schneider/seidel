@@ -1,8 +1,82 @@
 ---
 import Layout from "src/layouts/Layout.astro";
 import CallToAction from "src/sections/general/CallToAction.astro";
+import { Image } from "@astrojs/image/components";
+import { getImage } from "@astrojs/image";
+import WideSlide from "@components/Gallery/WideSlide";
+
+import eyeletRaw from "@img/industries/cosmetic/eyelet.jpg";
+import goldRaw from "@img/industries/cosmetic/gold-top.jpg";
+import colorsRaw from "@img/industries/cosmetic/colors.jpg";
+
+const eyelet = await getImage({ src: eyeletRaw });
+const gold = await getImage({ src: goldRaw });
+const colors = await getImage({ src: colorsRaw });
+
+const gallery = [
+  { src: eyelet.src!, alt: "eyelets" },
+  { src: gold.src!, alt: "golden caps" },
+  { src: colors.src!, alt: "varied colors" },
+];
+
+const products = [
+  {
+    img: import("@img/industries/cosmetic/pens.jpg"),
+    name: "Pens",
+    body: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text.",
+  },
+  {
+    img: import("@img/industries/cosmetic/fragrance.jpg"),
+    name: "Fragrance",
+    body: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text.",
+  },
+  {
+    img: import("@img/industries/cosmetic/makeup.jpg"),
+    name: "Makeup",
+    body: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text.",
+  },
+];
 ---
 
 <Layout title="Cosmetic Packaging">
+  <section class="px-[2.5%] my-10">
+    <div
+      class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
+    >
+      <div class="grow shrink-0 max-w-md text-center lg:text-left">
+        <h1 class="font-black text-6xl">Cosmetic Packaging</h1>
+        <p class="mt-4 text-lg">
+          This is just placeholder test. Don't be alarmed, this is just here to
+          fill up space since your finalized copy.
+        </p>
+      </div>
+      <div>
+        <Image
+          src={import("@img/industries/cosmetic/hero.png")}
+          alt="seidel aluminum anodizing"
+        />
+      </div>
+    </div>
+  </section>
+  <div class="bg-white py-20">
+    <section class="my-20 px-[2.5%]">
+      <div class="max-w-8xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-5">
+          {
+            products.map((product) => (
+              <div class="max-w-[600px]">
+                <Image src={product.img} alt={product.name} />
+                <p class="mt-5 font-bold text-3xl">{product.name}</p>
+                <p class="mt-2 text-lg leading-loose">{product.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <section class="my-20 px-[2.5%]">
+      <WideSlide label="Cosmetic Packaging" images={gallery} client:visible />
+    </section>
+  </div>
   <CallToAction />
 </Layout>
