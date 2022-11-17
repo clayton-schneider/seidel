@@ -3,8 +3,10 @@ import Layout from "src/layouts/Layout.astro";
 import CallToAction from "src/sections/general/CallToAction.astro";
 import Industries from "src/sections/general/Industries.astro";
 import { Image } from "@astrojs/image/components";
+import { getImage } from "@astrojs/image";
 import { Icon } from "astro-icon";
 import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import SmallSlide from "@components/Gallery/SmallSlide";
 const features = [
   {
     icon: "high-volume",
@@ -21,6 +23,25 @@ const features = [
     title: "Vertically Integrated",
     body: "From start to finish, Seidel can process all of your needs.",
   },
+];
+
+import silverRaw from "@img/capabilities/beautiful-silver.jpg";
+import colorsRaw from "@img/capabilities/colors.jpg";
+import gadgetsRaw from "@img/capabilities/gadgets.jpg";
+import lashRaw from "@img/capabilities/lash-container.jpg";
+import nozzleRaw from "@img/capabilities/nozzles.jpg";
+
+const silver = await getImage({ src: silverRaw });
+const colors = await getImage({ src: colorsRaw });
+const gadgets = await getImage({ src: gadgetsRaw });
+const lash = await getImage({ src: lashRaw });
+const nozzle = await getImage({ src: nozzleRaw });
+const gallery = [
+  { src: silver.src!, alt: "beautiful silver" },
+  { src: colors.src!, alt: "varied color tops" },
+  { src: gadgets.src!, alt: "custom decorated gadgets" },
+  { src: lash.src!, alt: "beautiful container" },
+  { src: nozzle.src!, alt: "anodized metals" },
 ];
 ---
 
@@ -104,6 +125,17 @@ const features = [
         />
       </div>
     </div>
+  </section>
+  <section class="bg-white px-[2.5%] py-20">
+    <h2 class="text-center font-bold text-4xl">
+      Beautiful Metal Is Our Specialty
+    </h2>
+    <SmallSlide
+      label="capbailities gallery"
+      images={gallery}
+      className="mt-10"
+      client:visible
+    />
   </section>
   <section class="bg-white px-[2.5%] py-20">
     <div
