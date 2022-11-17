@@ -1,8 +1,111 @@
 ---
 import Layout from "src/layouts/Layout.astro";
 import CallToAction from "src/sections/general/CallToAction.astro";
+import { Image } from "@astrojs/image/components";
+import Icon from "astro-icon";
+
+const features = [
+  {
+    icon: "degreasing",
+    title: "Degreasing",
+    actions: [
+      "Recycling of the oil",
+      "No Perchlor or Trichlor used in the anodizing degreaser",
+      "Seidel uses non-halogenated solvents, which are friendly to the environment, hazardous waste free, and gentle on the parts",
+    ],
+  },
+  {
+    icon: "metal-forming",
+    title: "Metal Forming",
+    actions: [
+      "Aluminum can be recycled indefinitely without losing its quality.",
+    ],
+  },
+  {
+    icon: "polishing",
+    title: "Electro-polishing and andozing",
+    actions: [
+      "No hazardous waste is produced",
+      "No copper used in the electro-polishing process",
+      "No Nickel Acetate in the sealing process",
+    ],
+  },
+];
 ---
 
 <Layout title="Sustainability | Seidel Group">
+  <section class="px-[2.5%] my-10">
+    <div
+      class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
+    >
+      <div class="grow shrink-0 max-w-lg text-center lg:text-left">
+        <h1 class="font-black text-6xl">Sustainability</h1>
+        <p class="mt-4 text-lg leading-loose">
+          Sustainability starts with an attitude of preserving and avoiding and
+          reducing wastefulness. It has to do with the materials we use and the
+          processes we invent. This is a continuously evolving process and we
+          strongly believe in it.
+        </p>
+      </div>
+      <div>
+        <Image
+          src={import("@img/sustainability/hero.png")}
+          alt="seidel aluminum anodizing"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="my-20 px-[2.5%]">
+    <div class="max-w-8xl mx-auto">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="font-bold text-3xl">
+          This is just a placeholder headline, we will replace it once your
+          website copy is finalized.
+        </h2>
+        <p class="mt-3 text-lg leading-loose">
+          This is just a placeholder headline, we will replace it once your
+          website copy is finalized.
+        </p>
+      </div>
+      <div
+        class="max-w-7xl mx-auto mt-20 flex flex-col lg:flex-row items-center lg:items-start gap-10 justify-between"
+      >
+        {
+          features.map((feature) => (
+            <div class="max-w-md text-center lg:text-left">
+              <Icon name={feature.icon} size={90} class="mx-auto lg:mx-0" />
+              <p class="mt-2 font-bold text-3xl">{feature.title}</p>
+              <ul class="mt-3 list-disc list-inside lg:list-outside marker:text-primary space-y-2">
+                {feature.actions.map((action) => (
+                  <li class="text-lg leading-loose">{action}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section class="bg-green px-[2.5%] py-20">
+    <div class="max-w-8xl mx-auto">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="font-bold text-3xl">
+          This is just a placeholder headline, we will replace it once your
+          website copy is finalized.
+        </h2>
+        <p class="mt-3 text-lg leading-loose">
+          Seidel is working very diligently at minimizing our footpring on the
+          planet. Below are a few of the many things we do to protect the
+          environment while improving the quality of the product at the same
+          time.
+        </p>
+      </div>
+      <Image
+        class="mt-10"
+        src={import("@img/sustainability/sustainable.png")}
+        alt="sustainable anodizing"
+      />
+    </div>
+  </section>
   <CallToAction />
 </Layout>
