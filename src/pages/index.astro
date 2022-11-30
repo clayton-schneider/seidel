@@ -4,12 +4,16 @@ import CallToAction from "src/sections/general/CallToAction.astro";
 import Hero from "src/sections/home/Hero.astro";
 import Industries from "src/sections/general/Industries.astro";
 import Companies from "src/sections/general/Companies.astro";
+import Timeline from "@components/Timeline/Timeline.astro";
 ---
 
 <Layout title="Seidel Group | Aluminum Anodizing">
   <main>
     <Hero />
     <Companies />
+    <section class="bg-white pt-20 pb-40 px-[5%]">
+      <Timeline />
+    </section>
     <Industries />
     <CallToAction />
   </main>
