@@ -17,7 +17,7 @@ const Selector = ({ data, className }: Props) => {
 
   return (
     <div className={className ? className : ""}>
-      <div className="max-w-[1000px] mx-auto grid grid-cols-3">
+      <div className="max-w-[1000px] mx-auto grid grid-cols-2 md:grid-cols-4">
         {data.map((option, i) => (
           <button
             onClick={() => setIdx(i)}
