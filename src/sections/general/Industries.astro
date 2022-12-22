@@ -9,31 +9,28 @@ const cosmeticImg = await getImage({ src: cosmeticPre });
 const industriesData = [
   {
     name: "General",
-    title: "High precision manufacturing and finishing",
-    p: "We serve all markets which require high precision form metal or plastic parts with color matching capabilities.",
+    title: "General Industries",
+    p: "High precision manufacturing and finishing",
     products: ["Writing instruments", "Garden Hoses", "Bottle Caps", "Medical"],
     img: cosmeticImg.src!,
   },
   {
     name: "Cosmetic",
-    title:
-      "This is just placeholder headline, we will replace it once your website copy is finished",
+    title: "Cosmetic Industry",
     p: "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet. Once we have your content finalized, we'll replace this placeholder text with real content",
     products: ["Makeup", "Skincare", "Fragrance", "Personal Care"],
     img: cosmeticImg.src!,
   },
   {
     name: "Automotive",
-    title:
-      "This is the automotive headline, we will replace it once your website copy is finished",
+    title: "Automotive Industry",
     p: "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet. Once we have your content finalized, we'll replace this placeholder text with real content",
     products: ["Kick Plates"],
     img: cosmeticImg.src!,
   },
   {
     name: "Pharmaceutical",
-    title:
-      "This is the pharmaceutical headline, we will replace it once your website copy is finished",
+    title: "Pharmaceutical Industry",
     p: "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet. Once we have your content finalized, we'll replace this placeholder text with real content",
     products: ["Bottles", "Droppers", "Packaging"],
     img: cosmeticImg.src!,
@@ -46,8 +43,8 @@ const industriesData = [
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-bold text-4xl">Indutries Served</h2>
       <p class="mt-3 text-lg">
-        This is just a placeholder text. Don't be alarmed, this is just here to
-        fill up space since your finalized copy, isn't ready.
+        We serve all markets which require high precision form metal or plastic
+        parts with color matching capabilities.
       </p>
     </div>
     <Selector className="mt-16" data={industriesData} client:load />
