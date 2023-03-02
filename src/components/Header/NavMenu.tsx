@@ -36,11 +36,11 @@ const NavMenu = ({ links }: Props) => {
                 <a href={link.link}>
                   <button>{link.linkText}</button>
                 </a>
-                <ul className="lg:absolute lg:left-1/2 lg:hidden pt-1 pl-5 lg:pl-0 lg:group-hover:block w-full lg:w-[200px] shadow text-center lg:-translate-x-1/2  text-black z-50">
+                <ul className="lg:absolute lg:left-1/2 lg:hidden pt-1 pl-5 lg:pl-0 lg:group-hover:block w-full lg:w-[200px] lg:shadow text-center lg:-translate-x-1/2  text-black z-50">
                   {link.sublinks.map((sublink, idx) => (
                     <li
                       key={idx}
-                      className="first:rounded-t last:rounded-b lg:bg-white lg:hover:bg-primary hover:text-white"
+                      className="first:rounded-t last:rounded-b lg:bg-white lg:hover:bg-primary lg:hover:text-white"
                     >
                       <a className=" py-2 px-4 block" href={sublink.link}>
                         {sublink.linkText}
