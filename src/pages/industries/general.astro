@@ -21,17 +21,17 @@ const gallery = [
 
 const products = [
   {
-    img: import("@img/industries/cosmetic/fragrance.jpg"),
+    img: import("@img/industries/general/garden-hoses.jpg"),
     name: "Garden Hoses",
     body: "From brass ferrules to anodization of aluminum couplings, we partner with OEM suppliers to the most trusted names in the industry.",
   },
   {
-    img: import("@img/industries/cosmetic/makeup.jpg"),
+    img: import("@img/industries/general/threaded-caps.jpg"),
     name: "Caps for Threaded Containers",
     body: "We have you covered - our stock line of bottle closures from 10mm through 89mm jar covers. Available free of tooling fees keeps new product launches on time and under budget.",
   },
   {
-    img: import("@img/industries/cosmetic/makeup.jpg"),
+    img: import("@img/industries/general/friction-fit-caps.jpg"),
     name: "Friction Fit Caps",
     body: "Many standard sizes available- fully decorated to suit in plastic, metal or multipiece categories fitting all budgets.",
   },
@@ -53,7 +53,7 @@ const products = [
       </div>
       <div>
         <Image
-          src={import("@img/industries/cosmetic/hero.png")}
+          src={import("@img/industries/general/general-industry.png")}
           alt="seidel aluminum anodizing"
         />
       </div>
@@ -66,7 +66,13 @@ const products = [
           {
             products.map((product) => (
               <div class="max-w-[600px]">
-                <Image src={product.img} alt={product.name} />
+                <Image
+                  width={600}
+                  height={400}
+                  fit="cover"
+                  src={product.img}
+                  alt={product.name}
+                />
                 <p class="mt-5 font-bold text-3xl">{product.name}</p>
                 <p class="mt-2 text-lg leading-loose">{product.body}</p>
               </div>

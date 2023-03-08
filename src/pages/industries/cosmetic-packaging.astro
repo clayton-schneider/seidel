@@ -21,7 +21,7 @@ const gallery = [
 
 const products = [
   {
-    img: import("@img/industries/cosmetic/pens.jpg"),
+    img: import("@img/industries/cosmetic/fragrance.jpg"),
     name: "Fragrance",
     body: "We are a premier supplier to the world’s largest producers of fragrance pumps. Our capabilities offer the perfect combination high volume, durable, and competitively priced components meeting your exacting specifications and requirements.",
   },
@@ -54,8 +54,11 @@ const products = [
       </div>
       <div>
         <Image
-          src={import("@img/industries/cosmetic/hero.png")}
-          alt="seidel aluminum anodizing"
+          width={600}
+          height={400}
+          fit="cover"
+          src={import("@img/industries/cosmetic/cosmetic-industry.jpg")}
+          alt="seidel cosmetic industry"
         />
       </div>
     </div>
@@ -67,7 +70,13 @@ const products = [
           {
             products.map((product) => (
               <div class="max-w-[600px]">
-                <Image src={product.img} alt={product.name} />
+                <Image
+                  width={600}
+                  height={400}
+                  fit="cover"
+                  src={product.img}
+                  alt={product.name}
+                />
                 <p class="mt-5 font-bold text-3xl">{product.name}</p>
                 <p class="mt-2 text-lg leading-loose">{product.body}</p>
               </div>
