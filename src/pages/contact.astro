@@ -4,6 +4,7 @@ import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 import CallToAction from "src/sections/general/CallToAction.astro";
 import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import ContactForm from "@components/Forms/ContactForm";
 
 const contacts = [
   { name: "ci:location", text: `2223 Thomaston Ave \nWaterbury, CT 06704` },
@@ -63,9 +64,7 @@ const fields = [
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div
-        class="flex flex-col items-center md:flex-row md:items-start md:space-x-20"
-      >
+      <div class="flex flex-col items-center md:flex-row md:items-start gap-20">
         <div class="w-full lg:max-w-[250px] text-center md:text-left">
           <h2 class="font-bold text-4xl">Contact Us</h2>
           <p class="mt-2 text-lg">
@@ -94,47 +93,13 @@ const fields = [
             </div>
           </div>
         </div>
-        <form
-          data-static-form-name="contact"
-          class="mt-10 grow w-full my-5 grid grid-cols-1 lg:grid-cols-2 gap-4"
-        >
-          {
-            fields.map((field) => (
-              <div
-                class={
-                  (field.fieldType === "textarea"
-                    ? "col-span-2"
-                    : "col-span-2 lg:col-span-1") + " relative"
-                }
-              >
-                <label for={field.id} class="invisible absolute">
-                  {field.name}
-                </label>
-                {field.fieldType === "textarea" ? (
-                  <textarea
-                    id={field.name}
-                    class="w-full bg-transparent focus:outline-none resize-none border-b-gray-800 border-b p-2 h-[150px]"
-                    placeholder={field.name}
-                  />
-                ) : (
-                  <input
-                    type={
-                      field.fieldType as astroHTML.JSX.HTMLInputTypeAttribute
-                    }
-                    name={field.name}
-                    id={field.id}
-                    class="w-full bg-transparent focus:outline-none border-b-gray-800 border-b p-2"
-                    placeholder={field.name}
-                  />
-                )}
-              </div>
-            ))
-          }
-
-          <PrimaryBtn type="submit" className="justify-self-start"
-            >Submit</PrimaryBtn
-          >
-        </form>
+        <ContactForm
+          client:load
+          name="Seidel Group: Contact Form"
+          message="Thank you for submitting this contact form. We will reach out to you shortly."
+          error="There was an error submitting this form. Please refresh and try again. If the problem persists, please send us an email directly."
+          fields={fields}
+        />
       </div>
     </div>
   </section>

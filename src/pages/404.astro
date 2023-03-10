@@ -1,0 +1,24 @@
+---
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout
+  seo={{
+    metaTitle: "Page Not Found | Seidel Group",
+    metaDescription: "The page you were looking for could not be found",
+  }}
+>
+  <section class="px-edge py-10 lg:py-20">
+    <div class="max-w-screen-xl mx-auto text-center">
+      <h1 class="font-bold text-4xl lg:text-5xl">
+        The Page You Are Looking For Could Not Be Found
+      </h1>
+      <p class="mt-3 text-lg">
+        Sorry, we can't find this page. The page was either removed, renamed, or
+        doesn't exitst
+      </p>
+      <PrimaryBtn className="mt-5" to="/">Go Home</PrimaryBtn>
+    </div>
+  </section>
+</Layout>

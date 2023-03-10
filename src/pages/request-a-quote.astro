@@ -1,6 +1,6 @@
 ---
 import Layout from "src/layouts/Layout.astro";
-import PrimaryBtn from "@components/buttons/PrimaryBtn";
+import ContactForm from "@components/Forms/ContactForm";
 const fields = [
   { fieldType: "text", id: "first", name: "First Name" },
   { fieldType: "text", id: "last", name: "Last Name" },
@@ -29,47 +29,13 @@ const fields = [
             we can assist you as best possible.
           </p>
         </div>
-        <form
-          data-static-form-name="request-a-quote"
-          class="my-5 grid grid-cols-1 lg:grid-cols-2 gap-4"
-        >
-          {
-            fields.map((field) => (
-              <div
-                class={
-                  (field.fieldType === "textarea"
-                    ? "col-span-2"
-                    : "col-span-2 lg:col-span-1") + " relative"
-                }
-              >
-                <label for={field.id} class="invisible absolute">
-                  {field.name}
-                </label>
-                {field.fieldType === "textarea" ? (
-                  <textarea
-                    id={field.name}
-                    class="w-full bg-transparent focus:outline-none resize-none border-b-gray-800 border-b p-2 h-[150px]"
-                    placeholder={field.name}
-                  />
-                ) : (
-                  <input
-                    type={
-                      field.fieldType as astroHTML.JSX.HTMLInputTypeAttribute
-                    }
-                    name={field.name}
-                    id={field.id}
-                    class="w-full bg-transparent focus:outline-none border-b-gray-800 border-b p-2"
-                    placeholder={field.name}
-                  />
-                )}
-              </div>
-            ))
-          }
-
-          <PrimaryBtn type="submit" className="col-span-2 text-center"
-            >Submit</PrimaryBtn
-          >
-        </form>
+        <ContactForm
+          client:load
+          name="Seidel Group: Request A Quote"
+          message="Thank you for submitting this contact form. We will reach out to you shortly."
+          error="There was an error submitting this form. Please refresh and try again. If the problem persists, please send us an email directly."
+          fields={fields}
+        />
       </div>
     </section>
   </main>
