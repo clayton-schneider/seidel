@@ -5,12 +5,17 @@ import { getImage } from "@astrojs/image";
 import { Image } from "@astrojs/image/components";
 import WideSlide from "@components/Gallery/WideSlide";
 
-import empImg from "@img/about/employee-rack-anodizing.jpg";
-const { src } = await getImage({ src: empImg });
+import empPre from "@img/about/employee-rack-anodizing.jpg";
+import buildingPre from "@img/about/seidel-group.png";
+import facilityPre from "@img/about/facility.jpg";
+
+const empImg = await getImage({ src: empPre });
+const buildingImg = await getImage({ src: buildingPre });
+const facilityImg = await getImage({ src: facilityPre });
 const gallery = [
-  { src: src!, alt: "img alt" },
-  { src: src!, alt: "img alt" },
-  { src: src!, alt: "img alt" },
+  { src: empImg.src!, alt: "manual racking in progress" },
+  { src: buildingImg.src!, alt: "seidel group headquarters" },
+  { src: facilityImg.src!, alt: "inside look of seidel group building" },
 ];
 ---
 

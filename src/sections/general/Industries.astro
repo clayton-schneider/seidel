@@ -4,15 +4,22 @@ import Selector from "@components/Selector/Selector";
 import { getImage } from "@astrojs/image";
 import { Image } from "@astrojs/image/components";
 
-import cosmeticPre from "@img/general/cosmetic-packaging.jpg";
+import generalPre from "@img/industries/general/general-industry.png";
+import cosmeticPre from "@img/industries/cosmetic/cosmetic-industry.jpg";
+import autoPre from "@img/industries/automotive/auto-hero.jpg";
+import pharmaPre from "@img/industries/pharma.jpg";
+
+const generalImg = await getImage({ src: generalPre });
 const cosmeticImg = await getImage({ src: cosmeticPre });
+const autoImg = await getImage({ src: autoPre });
+const pharmaImg = await getImage({ src: pharmaPre });
 const industriesData = [
   {
     name: "General",
     title: "General Industries",
     p: "High precision manufacturing and finishing",
     products: ["Writing instruments", "Garden Hoses", "Bottle Caps", "Medical"],
-    img: cosmeticImg.src!,
+    img: generalImg.src!,
   },
   {
     name: "Cosmetic",
@@ -26,14 +33,14 @@ const industriesData = [
     title: "Automotive Industry",
     p: "Our In house Metal forming and finishing capability are compelling reasons to partner with Seidel. Partnerships with local ISO certified vendors add plating, oxide, phosphate, passivation and other heat treatment processes make Seidel the logical choice to explore for your next project.",
     products: ["Kick Plates"],
-    img: cosmeticImg.src!,
+    img: autoImg.src!,
   },
   {
     name: "Pharmaceutical",
     title: "Pharmaceutical Industry",
     p: "Seidel Anodization is the perfect finishing technique for aluminum items for Pharma. In addition to the endless color array naturally comes a durable uniform oxide conversion shield that is impervious to most chemicals and scuff resistance finish in a variety of textures.",
     products: ["Bottles", "Droppers", "Packaging"],
-    img: cosmeticImg.src!,
+    img: pharmaImg.src!,
   },
 ];
 ---
