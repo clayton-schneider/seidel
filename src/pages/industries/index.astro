@@ -5,7 +5,13 @@ import CallToAction from "src/sections/general/CallToAction.astro";
 import { Image } from "@astrojs/image/components";
 ---
 
-<Layout title="Industries | Seidel Group">
+<Layout
+  seo={{
+    metaTitle: "Industries | Seidel Group",
+    metaDescription:
+      "As a vertically integrated manufacturer we serve all markets which require high precision metal parts combined with superior finishing and color matching know-how, assembled, or not assembled.",
+  }}
+>
   <section class="px-[2.5%] my-10">
     <div
       class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"

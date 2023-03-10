@@ -2,7 +2,12 @@
 import Layout from "src/layouts/Layout.astro";
 ---
 
-<Layout title="Privacy Policy">
+<Layout
+  seo={{
+    metaTitle: "Privacy Policy",
+    metaDescription: "Privacy Policy for Seidel Group",
+  }}
+>
   <section class="px-edge py-10 lg:py-20">
     <div class="max-w-screen-lg mx-auto prose">
       <h1>Privacy Policy</h1>

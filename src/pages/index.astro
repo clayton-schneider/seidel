@@ -7,7 +7,13 @@ import Companies from "src/sections/general/Companies.astro";
 import Timeline from "@components/Timeline/Timeline.astro";
 ---
 
-<Layout title="Seidel Group | Aluminum Anodizing">
+<Layout
+  seo={{
+    metaTitle: "Seidel Group",
+    metaDescription:
+      "Fully integrated manufacturer of beautiful metal & plastic parts, producing millions of parts per day.",
+  }}
+>
   <main>
     <Hero />
     <Companies />
