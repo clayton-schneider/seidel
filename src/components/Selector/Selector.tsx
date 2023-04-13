@@ -37,7 +37,7 @@ const Selector = ({ data, className }: Props) => {
         <img
           src={data[idx].img}
           alt={data[idx].name}
-          className="max-w-full md:max-w-[700px] h-full object-cover"
+          className="min-w-[500px] max-w-full md:max-w-[700px] h-full max-h-[500px] object-cover"
         />
         <div className="text-center lg:text-left">
           <h3 className="font-bold text-3xl">{data[idx].title}</h3>

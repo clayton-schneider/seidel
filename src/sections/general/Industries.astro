@@ -2,12 +2,11 @@
 import Selector from "@components/Selector/Selector";
 
 import { getImage } from "@astrojs/image";
-import { Image } from "@astrojs/image/components";
 
 import generalPre from "@img/industries/general/general-industry.png";
 import cosmeticPre from "@img/industries/cosmetic/cosmetic-industry.jpg";
 import autoPre from "@img/industries/automotive/auto-hero.jpg";
-import pharmaPre from "@img/industries/pharma.jpg";
+import pharmaPre from "@img/industries/pharmaceutical/pharma-hero.jpg";
 
 const generalImg = await getImage({ src: generalPre });
 const cosmeticImg = await getImage({ src: cosmeticPre });
