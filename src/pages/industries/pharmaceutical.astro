@@ -21,19 +21,9 @@ const gallery = [
 
 const products = [
   {
-    img: import("@img/industries/cosmetic/pens.jpg"),
-    name: "Bottles",
-    body: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text.",
-  },
-  {
     img: import("@img/industries/pharmaceutical/droppers.jpg"),
     name: "Droppers",
-    body: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text.",
-  },
-  {
-    img: import("@img/industries/cosmetic/pens.jpg"),
-    name: "Packaging",
-    body: "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet. Once we have your content finalized, we’ll replace this placeholder text.",
+    body: "See Seidel for all your Pharmaceutical packaging needs. From droppers to bottle closures, Seidel will meet your needs.",
   },
 ];
 ---
@@ -69,11 +59,11 @@ const products = [
   <div class="bg-white py-20">
     <section class="my-20 px-[2.5%]">
       <div class="max-w-8xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-5">
+        <div class="flex justify-center">
           {
             products.map((product) => (
               <div class="max-w-[600px]">
-                <Image src={product.img} alt={product.name} />
+                <Image class="w-full" src={product.img} alt={product.name} />
                 <p class="mt-5 font-bold text-3xl">{product.name}</p>
                 <p class="mt-2 text-lg leading-loose">{product.body}</p>
               </div>
