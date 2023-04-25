@@ -26,7 +26,7 @@ const Selector = ({ data, className }: Props) => {
               (idx === i
                 ? "bg-primary text-white"
                 : "bg-transparent text-black") +
-              " py-3 border border-primary font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300"
+              " py-3 border border-primary font-bold font-headline text-lg hover:bg-primary hover:text-white transition-all duration-300"
             }
           >
             {option.name}
@@ -40,7 +40,9 @@ const Selector = ({ data, className }: Props) => {
           className="min-w-[500px] max-w-full md:max-w-[700px] h-full max-h-[500px] object-cover"
         />
         <div className="text-center lg:text-left">
-          <h3 className="font-bold text-3xl">{data[idx].title}</h3>
+          <h3 className="font-bold font-headline text-3xl">
+            {data[idx].title}
+          </h3>
           <p className="mt-4 text-lg leading-relaxed">{data[idx].p}</p>
           <ul className="mt-5 list-disc inline-block marker:text-primary">
             {data[idx].products?.map((product) => (

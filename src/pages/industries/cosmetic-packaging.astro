@@ -51,7 +51,7 @@ const products = [
       class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
     >
       <div class="grow shrink-0 max-w-md text-center lg:text-left">
-        <h1 class="font-black text-6xl">Cosmetic Packaging</h1>
+        <h1 class="font-black font-headline text-6xl">Cosmetic Packaging</h1>
         <p class="mt-4 text-lg">
           Extensive partnerships with tube, mascara and lipstick specialists
           give us brand specific insight and knowledge to increase speed to
@@ -83,7 +83,9 @@ const products = [
                   src={product.img}
                   alt={product.name}
                 />
-                <p class="mt-5 font-bold text-3xl">{product.name}</p>
+                <p class="mt-5 font-bold font-headline text-3xl">
+                  {product.name}
+                </p>
                 <p class="mt-2 text-lg leading-loose">{product.body}</p>
               </div>
             ))
