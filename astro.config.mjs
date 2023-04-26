@@ -11,6 +11,11 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
+  // Needed to remove the backslash in CF Pages
+  // https://docs.astro.build/en/reference/configuration-reference/#build-options
+  build: {
+    format: "file",
+  },
   integrations: [
     tailwind(),
     react(),
