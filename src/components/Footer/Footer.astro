@@ -66,10 +66,10 @@ const date = new Date();
         <ul class="space-y-3 mt-2">
           {
             contacts.map((contact) => (
-              <div class="flex items-start space-x-2 max-w-xs">
+              <li class="flex items-start space-x-2 max-w-xs">
                 <Icon name={contact.name} size={30} class="text-primary" />
                 <p class="whitespace-pre-line">{contact.text}</p>
-              </div>
+              </li>
             ))
           }
         </ul>

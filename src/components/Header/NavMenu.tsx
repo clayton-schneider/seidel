@@ -58,14 +58,18 @@ const NavMenu = ({ links }: Props) => {
             );
           }
         })}
-        <PrimaryBtn
-          to="/request-a-quote"
-          className="!block w-full text-center lg:text-left lg:w-auto"
-        >
-          Request A Quote
-        </PrimaryBtn>
+        <li>
+          <PrimaryBtn
+            to="/request-a-quote"
+            className="!block w-full text-center lg:text-left lg:w-auto"
+          >
+            Request A Quote
+          </PrimaryBtn>
+        </li>
+        <li>
+          <Hamburger clicked={handleClick} isOpen={isOpen} />
+        </li>
       </ul>
-      <Hamburger clicked={handleClick} isOpen={isOpen} />
     </div>
   );
 };
