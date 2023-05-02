@@ -1,0 +1,4 @@
+Sitemap: https://www.seidelgroup.com/sitemap-index.xml
+
+User-agent: *
+Disallow: /assets/*
