@@ -20,6 +20,8 @@ const contacts = [
   { name: "carbon:phone-filled", text: "203-757-7349" },
   { name: "ic:sharp-email", text: "customerservice@seidelgroup.com" },
 ];
+
+const date = new Date();
 ---
 
 <section>
@@ -79,7 +81,7 @@ const contacts = [
       class="max-w-8xl mx-auto flex justify-between flex-col lg:flex-row items-center space-y-2 lg:space-y-0"
     >
       <p class="text-sm">
-        © 2022 Seidel Group | All Rights Reserved | Powered by <a
+        © {date.getFullYear()} Seidel Group | All Rights Reserved | Powered by <a
           href="https://simply-sprout.com">Simply Sprout</a
         >
       </p>
