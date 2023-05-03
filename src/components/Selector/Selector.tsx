@@ -1,5 +1,4 @@
 import { useState } from "react";
-import type { ImgHTMLAttributes } from "@astrojs/image/components";
 
 interface Props {
   data: {

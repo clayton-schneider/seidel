@@ -31,11 +31,11 @@ import gadgetsRaw from "@img/capabilities/gadgets.jpg";
 import lashRaw from "@img/capabilities/lash-container.jpg";
 import nozzleRaw from "@img/capabilities/nozzles.jpg";
 
-const silver = await getImage({ src: silverRaw });
-const colors = await getImage({ src: colorsRaw });
-const gadgets = await getImage({ src: gadgetsRaw });
-const lash = await getImage({ src: lashRaw });
-const nozzle = await getImage({ src: nozzleRaw });
+const silver = await getImage({ src: silverRaw, format: "webp" });
+const colors = await getImage({ src: colorsRaw, format: "webp" });
+const gadgets = await getImage({ src: gadgetsRaw, format: "webp" });
+const lash = await getImage({ src: lashRaw, format: "webp" });
+const nozzle = await getImage({ src: nozzleRaw, format: "webp" });
 const gallery = [
   { src: silver.src!, alt: "beautiful silver" },
   { src: colors.src!, alt: "varied color tops" },
@@ -68,6 +68,7 @@ const gallery = [
       </div>
       <div>
         <Image
+          format="webp"
           src={import("@img/capabilities/hero.png")}
           alt="seidel aluminum anodizing"
           quality={100}
@@ -107,11 +108,13 @@ const gallery = [
         </p>
       </div>
       <Image
+        format="webp"
         class="mt-3 hidden md:block"
         src={import("@img/capabilities/capabilities.png")}
         alt="capabilites"
       />
       <Image
+        format="webp"
         class="mx-auto mt-3 md:hidden"
         src={import("@img/capabilities/capabilities-vertical.png")}
         alt="capabilities"
@@ -149,6 +152,7 @@ const gallery = [
       </div>
       <div>
         <Image
+          format="webp"
           src={import("@img/capabilities/custom-colors.png")}
           alt="seidel aluminum anodizing"
         />
@@ -187,6 +191,7 @@ const gallery = [
       </div>
       <div>
         <Image
+          format="webp"
           src={import("@img/capabilities/specifications.png")}
           alt="specifications"
         />

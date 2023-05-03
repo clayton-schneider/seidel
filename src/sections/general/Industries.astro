@@ -8,10 +8,10 @@ import cosmeticPre from "@img/industries/cosmetic/cosmetic-industry.jpg";
 import autoPre from "@img/industries/automotive/auto-hero.jpg";
 import pharmaPre from "@img/industries/pharmaceutical/pharma-hero.jpg";
 
-const generalImg = await getImage({ src: generalPre });
-const cosmeticImg = await getImage({ src: cosmeticPre });
-const autoImg = await getImage({ src: autoPre });
-const pharmaImg = await getImage({ src: pharmaPre });
+const generalImg = await getImage({ src: generalPre, format: "webp" });
+const cosmeticImg = await getImage({ src: cosmeticPre, format: "webp" });
+const autoImg = await getImage({ src: autoPre, format: "webp" });
+const pharmaImg = await getImage({ src: pharmaPre, format: "webp" });
 const industriesData = [
   {
     name: "General",

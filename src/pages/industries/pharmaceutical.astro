@@ -14,9 +14,9 @@ const gold = await getImage({ src: goldRaw });
 const colors = await getImage({ src: colorsRaw });
 
 const gallery = [
-  { src: eyelet.src!, alt: "eyelets" },
-  { src: gold.src!, alt: "golden caps" },
-  { src: colors.src!, alt: "varied colors" },
+  { src: eyelet.src!, alt: "eyelets", format: "webp" },
+  { src: gold.src!, alt: "golden caps", format: "webp" },
+  { src: colors.src!, alt: "varied colors", format: "webp" },
 ];
 
 const products = [
@@ -50,6 +50,7 @@ const products = [
       </div>
       <div>
         <Image
+          format="webp"
           src={import("@img/industries/pharma.jpg")}
           alt="seidel aluminum anodizing"
         />
@@ -63,7 +64,12 @@ const products = [
           {
             products.map((product) => (
               <div class="max-w-[600px]">
-                <Image class="w-full" src={product.img} alt={product.name} />
+                <Image
+                  format="webp"
+                  class="w-full"
+                  src={product.img}
+                  alt={product.name}
+                />
                 <p class="mt-5 font-bold font-headline text-3xl">
                   {product.name}
                 </p>

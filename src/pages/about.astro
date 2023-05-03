@@ -9,9 +9,9 @@ import empPre from "@img/about/employee-rack-anodizing.jpg";
 import buildingPre from "@img/about/seidel-group.png";
 import facilityPre from "@img/about/facility.jpg";
 
-const empImg = await getImage({ src: empPre });
-const buildingImg = await getImage({ src: buildingPre });
-const facilityImg = await getImage({ src: facilityPre });
+const empImg = await getImage({ src: empPre, format: "webp" });
+const buildingImg = await getImage({ src: buildingPre, format: "webp" });
+const facilityImg = await getImage({ src: facilityPre, format: "webp" });
 const gallery = [
   { src: empImg.src!, alt: "manual racking in progress" },
   { src: buildingImg.src!, alt: "seidel group headquarters" },
@@ -41,6 +41,7 @@ const gallery = [
       <div>
         <Image
           width={600}
+          format="webp"
           src={import("@img/about/facility.jpg")}
           alt="inside look of seidel group plan"
           quality={100}
@@ -75,6 +76,7 @@ const gallery = [
       </div>
       <div>
         <Image
+          format="webp"
           src={import("@img/about/history.jpg")}
           alt="seidel group aluminum anodizing in action"
         />
@@ -106,6 +108,7 @@ const gallery = [
       </div>
       <div>
         <Image
+          format="webp"
           src={import("@img/about/environmentally-safe.png")}
           alt="environmentally safe anodizing technology"
         />
@@ -130,6 +133,7 @@ const gallery = [
       </div>
       <div>
         <Image
+          format="webp"
           src={import("@img/about/sustainability.png")}
           alt="seidel aluminum anodizing"
         />

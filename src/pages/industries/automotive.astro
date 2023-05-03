@@ -51,6 +51,7 @@ const products = [
       </div>
       <div>
         <Image
+          format="webp"
           width={600}
           height={300}
           fit="cover"
@@ -67,7 +68,7 @@ const products = [
           {
             products.map((product) => (
               <div class="max-w-[600px]">
-                <Image src={product.img} alt={product.name} />
+                <Image format="webp" src={product.img} alt={product.name} />
                 <p class="mt-5 font-bold font-headline text-3xl">
                   {product.name}
                 </p>
