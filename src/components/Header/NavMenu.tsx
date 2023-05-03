@@ -66,10 +66,9 @@ const NavMenu = ({ links }: Props) => {
             Request A Quote
           </PrimaryBtn>
         </li>
-        <li>
-          <Hamburger clicked={handleClick} isOpen={isOpen} />
-        </li>
       </ul>
+
+      <Hamburger clicked={handleClick} isOpen={isOpen} />
     </div>
   );
 };
