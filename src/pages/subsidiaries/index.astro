@@ -1,0 +1,106 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import PrimaryBtn from "@components/buttons/PrimaryBtn";
+
+const subsidiaries = [
+  {
+    name: "Eyelet Crafters",
+    img: import("@img/industries/cosmetic/eyelet.jpg"),
+    body: "This is filler text to be replaced with a short description",
+    link: {
+      text: "Eyelet Crafters' page",
+      to: "/subsidiaries/eyelet-crafters",
+    },
+  },
+  {
+    name: "Eyelet Design",
+    img: import("@img/industries/cosmetic/eyelet.jpg"),
+    body: "This is filler text to be replaced with a short description",
+    link: {
+      text: "Eyelet Design's page",
+      to: "/subsidiaries/eyelet-design",
+    },
+  },
+  {
+    name: "Quest Plastics",
+    img: import("@img/industries/cosmetic/eyelet.jpg"),
+    body: "This is filler text to be replaced with a short description",
+    link: {
+      text: "Quest Plastics' page",
+      to: "/subsidiaries/quest-plastics",
+    },
+  },
+  {
+    name: "Romatic",
+    img: import("@img/industries/cosmetic/eyelet.jpg"),
+    body: "This is filler text to be replaced with a short description",
+    link: {
+      text: "Romatic's page",
+      to: "/subsidiaries/romatic",
+    },
+  },
+  {
+    name: "Seidel",
+    img: import("@img/industries/cosmetic/eyelet.jpg"),
+    body: "This is filler text to be replaced with a short description",
+    link: {
+      text: "Seidel's page",
+      to: "/subsidiaries/seidel",
+    },
+  },
+];
+---
+
+<Layout
+  seo={{
+    metaTitle: "Subsidiaries | Seidel Group",
+    metaDescription:
+      "Seidel Group has combined Eyelet Crafters, Eyelet Design, Quest Plastics, Romatic, and Seidel to become a fully vertical integrated packaging supplier.",
+  }}
+>
+  <section class="px-[2.5%] my-10">
+    <div
+      class="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:items-start justify-between space-y-5 lg:space-y-0"
+    >
+      <div class="grow shrink-0 max-w-lg text-center lg:text-left">
+        <h1 class="font-black font-headline text-5xl md:text-6xl">
+          Subsidiaries
+        </h1>
+        <p class="mt-4 text-lg leading-loose">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum,
+          voluptatum veniam culpa iusto facilis est deleniti laborum distinctio.
+        </p>
+      </div>
+      <div>
+        <Image
+          format="webp"
+          src={import("@img/subsidiaries/subsidiaries.jpg")}
+          height={500}
+          alt="seidel aluminum anodizing"
+        />
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-white py-20">
+    <section class="my-20 px-[2.5%]">
+      <div class="max-w-8xl mx-auto">
+        <div class="grid grid-cols-3 gap-10 place-content-center">
+          {
+            subsidiaries.map((sub) => (
+              <div class="max-w-[600px]">
+                <Image format="webp" src={sub.img} alt={sub.name} />
+                <p class="mt-5 font-bold font-headline text-3xl">{sub.name}</p>
+                <p class="mt-2 text-lg leading-loose">{sub.body}</p>
+                <PrimaryBtn to={sub.link.to} className="mt-5">
+                  {sub.link.text}
+                </PrimaryBtn>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

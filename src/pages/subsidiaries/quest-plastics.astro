@@ -1,0 +1,47 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import CallToAction from "src/sections/general/CallToAction.astro"
+---
+
+<Layout
+  seo={{
+    metaTitle: "Quest Plastics | Seidel Group",
+    metaDescription:
+      "Quest Plastics specializes in the manufacturing of plastic components and assemblies for the aerosol, fragrance and color cosmetic industries and is a subsidiary of Seidel Group.",
+  }}
+>
+  <section class="px-[2.5%] my-10">
+    <div class="max-w-6xl mx-auto flex justify-center">
+      <div class="text-center">
+        <Image
+          class="mx-auto"
+          format="webp"
+          src={import("@img/subsidiaries/subsidiaries.jpg")}
+          height={500}
+          alt="seidel aluminum anodizing"
+        />
+        <h1 class="mt-5 font-black font-headline text-5xl md:text-6xl">
+          Quest Plastics
+        </h1>
+        <p class="mt-4 text-lg leading-loose">
+          Quest Plastics specializes in the manufacturing of plastic components
+          and assemblies for the aerosol, fragrance and color cosmetic
+          industries right here in the USA. While still a custom molder, Quest
+          has its own products, including caps, cap inserts, closures, loose and
+          pressed powder containers and lipsticks. As a custom molder, Quest
+          owns a large variety of standard mold bases which make it possible to
+          tool many plastic components more quickly and less expensively than
+          our competitors. Quest also provides additional services including
+          assembly, hot stamp decoration and pad printing. We also have recently
+          added specialized equipment and an environmentally controlled room for
+          running Surlyn. The ultimate goal of our company for over 25 years is
+          to develop long lasting and mutually beneficial relationships with
+          customers and we look forward to providing you with the superior
+          service a flexible and dedicated manufacturer can provide.
+        </p>
+      </div>
+    </div>
+  </section>
+  <CallToAction />
+</Layout>
