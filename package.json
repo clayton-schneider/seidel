@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.11.1",
+    "@astrojs/partytown": "^2.0.4",
     "@astrojs/react": "^1.2.2",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^2.1.2",
