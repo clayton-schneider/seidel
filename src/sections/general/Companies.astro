@@ -9,11 +9,11 @@ const companies = ["acura", "opel", "cadillac"];
       Trusted By The Best
     </h2>
     <div
-      class="max-w-full overflow-x-hidden mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-24 items-center"
+      class="max-w-full overflow-x-hidden mt-10 grid md:grid-cols-3 gap-24 items-center"
     >
       {
         companies.map((company) => (
-          <Icon name={company} class="max-w-full md:max-w-[190px] mx-auto" />
+          <Icon name={company} class="max-w-[190px] mx-auto" />
         ))
       }
     </div>
